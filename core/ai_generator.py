@@ -25,7 +25,7 @@ def generate_briefing(market_data, top_gainers, top_losers, news_items, session_
    - 문장이 너무 길어지지 않게 **50~70자 내외마다 줄바꿈(<br>)**을 넣어주세요.
    - 내용이 바뀔 때나 설명이 길어질 때는 **단락(<p>)을 자주 나누어** 여유 공간을 만드세요.
 5. **디자인**: 
-   - 전체는 흰색 배경의 HTML <div>로 감싸세요.
+   - 전체는 흰색 배경의 HTML <div style="font-size: 16px; line-height: 1.6; color: #333; font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;">로 감싸세요.
    - 섹션은 '1️⃣' 등 숫자 이모지와 왼쪽 수직 바(|) 디자인을 사용하세요.
    - 상승은 빨간색(#ff4d4d), 하락은 파란색(#4d94ff) 인라인 CSS를 사용하세요.
    - 마크다운 기호 없이 오직 HTML 태그만 사용하세요.
