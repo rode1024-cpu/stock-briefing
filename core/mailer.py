@@ -16,9 +16,12 @@ def send_email(subject, body_html):
         print("Email configuration missing in .env")
         return False
 
+    # Handle multiple recipients
+    recipient_list = [email.strip() for email in recipient_email.split(",")]
+    
     msg = MIMEMultipart()
     msg['From'] = f"US Stock Briefing <{sender_email}>"
-    msg['To'] = recipient_email
+    msg['To'] = ", ".join(recipient_list)
     msg['Subject'] = subject
 
     # Attach the HTML body
@@ -30,7 +33,7 @@ def send_email(subject, body_html):
         server.starttls()  # Secure the connection
         server.login(sender_email, sender_password)
         text = msg.as_string()
-        server.sendmail(sender_email, recipient_email, text)
+        server.sendmail(sender_email, recipient_list, text)
         server.quit()
         print("Email sent successfully!")
         return True

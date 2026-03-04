@@ -4,6 +4,8 @@ on:
   schedule:
     # 6:00 AM KST = 21:00 UTC (previous day)
     - cron: '0 21 * * *'
+    # 12:00 AM KST = 15:00 UTC
+    - cron: '0 15 * * *'
   workflow_dispatch: # Allows manual trigger
 
 jobs:
